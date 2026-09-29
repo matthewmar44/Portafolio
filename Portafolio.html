@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portafolio Profesional | Desarrollador de Software</title>
+    <!-- FontAwesome para iconos profesionales -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * { box-sizing: border-box; }
+        body {
+            background-color: #F8F9FA;
+            color: #1A2530;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+        main {
+            flex: 1; /* Esto empuja el footer siempre hacia la parte inferior de la pantalla */
+            max-width: 1100px;
+            width: 100%;
+            margin: 0 auto;
+            padding: 30px 20px;
+        }
+        .card-hover {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .card-hover:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(10,25,47,0.12) !important;
+        }
+        .seccion-contenido {
+            display: none;
+        }
+        .seccion-contenido.activa {
+            display: block;
+        }
+        .nav-link {
+            color: #ffffff;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.95rem;
+            cursor: pointer;
+            padding: 6px 12px;
+            border-radius: 4px;
+            transition: background 0.2s;
+        }
+        .nav-link:hover, .nav-link.activo {
+            background: rgba(212, 175, 55, 0.2);
+            color: #D4AF37;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- HEADER / NAVEGACIÓN FIJA -->
+    <header style="background: #0A192F; border-bottom: 3px solid #D4AF37; padding: 15px 40px; display: flex; justify-content: space-between; align-items: center; position: sticky; top: 0; z-index: 1000; box-shadow: 0 4px 10px rgba(0,0,0,0.1);">
+        <h1 style="color: #D4AF37; margin: 0; font-size: 1.4rem; font-weight: 700;">
+            <i class="fa-solid fa-code"></i> Mi Portafolio
+        </h1>
+        <nav style="display: flex; flex-wrap: wrap; gap: 10px; align-items: center;">
+            <a onclick="mostrarSeccion('inicio')" class="nav-link activo" id="link-inicio">Inicio</a>
+            <a onclick="mostrarSeccion('sobre-mi')" class="nav-link" id="link-sobre-mi">Sobre Mí</a>
+            <a onclick="mostrarSeccion('experiencia')" class="nav-link" id="link-experiencia">Trayectoria</a>
+            <a onclick="mostrarSeccion('habilidades')" class="nav-link" id="link-habilidades">Habilidades</a>
+            <a onclick="mostrarSeccion('proyectos')" class="nav-link" id="link-proyectos">Proyectos</a>
+            <a onclick="mostrarSeccion('galeria')" class="nav-link" id="link-galeria">Galería</a>
+            <a onclick="mostrarSeccion('metas')" class="nav-link" id="link-metas">Metas</a>
+            <a onclick="mostrarSeccion('logros')" class="nav-link" id="link-logros">Logros</a>
+            <a onclick="mostrarSeccion('contacto')" class="nav-link" id="link-contacto">Contacto</a>
+        </nav>
+    </header>
+
+    <main>
+
+        <!-- 1. SECCIÓN INICIO / HERO (Con mucho más contenido y cuerpo) -->
+        <section id="inicio" class="seccion-contenido activa" style="padding: 40px 20px; text-align: center;">
+            <span style="background: #E2E8F0; color: #0A192F; padding: 6px 16px; border-radius: 20px; font-size: 0.85rem; font-weight: bold; display: inline-block; margin-bottom: 15px; border: 1px solid #CBD5E0;">Disponible para proyectos y consultoría tecnológica</span>
+            <h2 style="color: #0A192F; font-size: 3rem; margin-bottom: 15px;">Ingeniería de Software & Desarrollo Digital</h2>
+            <p style="color: #4A5568; font-size: 1.15rem; max-width: 800px; margin: 0 auto 25px auto; line-height: 1.7;">
+                Especializado en conceptualizar, estructurar y desarrollar soluciones tecnológicas de alto rendimiento. Mi enfoque combina la lógica de programación avanzada con el diseño de interfaces limpias, asegurando bases de datos escalables y experiencias de usuario memorables.
+            </p>
+            <div style="display: flex; justify-content: center; gap: 15px; flex-wrap: wrap; margin-bottom: 40px;">
+                <button onclick="mostrarSeccion('proyectos')" style="background: #0A192F; color: #D4AF37; padding: 12px 30px; border-radius: 6px; font-weight: bold; border: 2px solid #D4AF37; cursor: pointer; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">Ver Proyectos Destacados</button>
+                <button onclick="mostrarSeccion('contacto')" style="background: transparent; color: #0A192F; padding: 12px 30px; border-radius: 6px; font-weight: bold; border: 2px solid #0A192F; cursor: pointer;">Hablemos por WhatsApp</button>
+            </div>
+
+            <!-- Bloques informativos adicionales en el Inicio para rellenar la vista -->
+            <div style="display: flex; gap: 20px; justify-content: center; flex-wrap: wrap; margin-top: 30px;">
+                <div style="background: #FFFFFF; border: 1px solid #E2E8F0; border-radius: 8px; width: 320px; padding: 25px; text-align: left; box-shadow: 0 4px 10px rgba(0,0,0,0.03);">
+                    <i class="fa-solid fa-bolt" style="font-size: 1.5rem; color: #D4AF37; margin-bottom: 12px;"></i>
+                    <h3 style="color: #0A192F; margin-top: 0; font-size: 1.1rem;">Rendimiento Optimizado</h3>
+                    <p style="color: #4A5568; font-size: 0.9rem; line-height: 1.6; margin: 0;">Desarrollo bajo estándares de código limpio, asegurando tiempos de carga reducidos y mantenimiento simplificado a largo plazo.</p>
+                </div>
+                <div style="background: #FFFFFF; border: 1px solid #E2E8F0; border-radius: 8px; width: 320px; padding: 25px; text-align: left; box-shadow: 0 4px 10px rgba(0,0,0,0.03);">
+                    <i class="fa-solid fa-shield-halved" style="font-size: 1.5rem; color: #0A192F; margin-bottom: 12px;"></i>
+                    <h3 style="color: #0A192F; margin-top: 0; font-size: 1.1rem;">Estructuras Seguras</h3>
+                    <p style="color: #4A5568; font-size: 0.9rem; line-height: 1.6; margin: 0;">Diseño de bases de datos relacionales robustas aplicando modelos entidad-relación y buenas prácticas de seguridad informática.</p>
+                </div>
+                <div style="background: #FFFFFF; border: 1px solid #E2E8F0; border-radius: 8px; width: 320px; padding: 25px; text-align: left; box-shadow: 0 4px 10px rgba(0,0,0,0.03);">
+                    <i class="fa-solid fa-wand-magic-sparkles" style="font-size: 1.5rem; color: #D4AF37; margin-bottom: 12px;"></i>
+                    <h3 style="color: #0A192F; margin-top: 0; font-size: 1.1rem;">Enfoque UX/UI</h3>
+                    <p style="color: #4A5568; font-size: 0.9rem; line-height: 1.6; margin: 0;">Interfaces intuitivas, adaptables a cualquier dispositivo y centradas en ofrecer una navegación fluida para el usuario final.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 2. SECCIÓN SOBRE MÍ -->
+        <section id="sobre-mi" class="seccion-contenido card-hover" style="background: #FFFFFF; border: 1px solid #E2E8F0; border-radius: 12px; padding: 40px; box-shadow: 0 10px 25px rgba(10,25,47,0.05);">
+            <div style="display: flex; align-items: center; gap: 40px; flex-wrap: wrap; justify-content: center;">
+                <div style="width: 280px; height: 360px; border-radius: 8px; overflow: hidden; box-shadow: 0 6px 15px rgba(0,0,0,0.15); border: 3px solid #D4AF37; background: #fff;">
+                    <img src="./perfil_profecional/Profesional.jpg" alt="Foto de perfil profesional" style="width: 100%; height: 100%; object-fit: contain; object-position: center;">
+                </div>
+                <div style="flex: 1; min-width: 320px; color: #2D3748;">
+                    <h2 style="color: #0A192F; margin-bottom: 20px; font-size: 2rem; border-bottom: 2px solid #D4AF37; padding-bottom: 8px; display: inline-block;">Sobre Mí</h2>
+                    <p style="line-height: 1.8; margin-bottom: 15px; font-size: 1.05rem;">
+                        ¡Qué tal! Soy un apasionado desarrollador y estudiante de tecnología enfocado en la ingeniería de software. Me considero una persona sumamente analítica, curiosa y comprometida con la resolución de problemas lógicos complejos. Desde mis inicios en la programación, he entendido que cada línea de código representa una oportunidad para automatizar procesos y facilitar la vida de las personas.
+                    </p>
+                    <p style="line-height: 1.8; margin-bottom: 15px; font-size: 1.05rem;">
+                        Mi formación técnica me ha dotado de destrezas clave en el modelado de bases de datos, maquetación web responsiva y lógica computacional mediante lenguajes como Python. Disfruto enfrentando retos intelectuales y trabajando bajo metodologías que promueven la mejora continua y la innovación constante.
+                    </p>
+                    <p style="line-height: 1.8; font-size: 1.05rem; margin-bottom: 25px;">
+                        Fuera de las pantallas, sigo de cerca las tendencias tecnológicas globales, practico la resolución de retos algorítmicos y busco siempre aprender de colegas y mentores para elevar mi perfil profesional al siguiente nivel.
+                    </p>
+                    <div style="display: flex; gap: 15px;">
+                        <a href="https://github.com" target="_blank" style="background: #0A192F; color: #D4AF37; width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center; text-decoration: none; font-size: 1.1rem;"><i class="fa-brands fa-github"></i></a>
+                        <a href="https://linkedin.com" target="_blank" style="background: #0A192F; color: #D4AF37; width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center; text-decoration: none; font-size: 1.1rem;"><i class="fa-brands fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 3. SECCIÓN TRAYECTORIA / ESTUDIOS -->
+        <section id="experiencia" class="seccion-contenido" style="padding: 10px 0;">
+            <h2 style="color: #0A192F; text-align: center; margin-bottom: 10px; font-size: 2.2rem;">Formación y Trayectoria</h2>
+            <p style="color: #718096; text-align: center; margin-bottom: 30px; font-size: 1rem;">Mi evolución técnica, académica y compromiso profesional</p>
+
+            <div style="display: flex; gap: 20px; justify-content: center; flex-wrap: wrap;">
+                <div class="card-hover" style="background: #FFFFFF; border: 1px solid #E2E8F0; border-radius: 12px; width: 500px; padding: 30px; box-shadow: 0 4px 10px rgba(0,0,0,0.05); border-left: 5px solid #0A192F;">
+                    <span style="color: #D4AF37; font-weight: bold; font-size: 0.9rem;">Formación Académica Especializada</span>
+                    <h3 style="color: #0A192F; margin: 8px 0 10px 0; font-size: 1.3rem;">Estudiante de Ingeniería de Software & Tecnologías</h3>
+                    <p style="color: #4A5568; font-size: 0.95rem; line-height: 1.7; margin-bottom: 15px;">
+                        Capacitación integral en el diseño de algoritmos avanzados, paradigmas de programación orientada a objetos (POO), maquetación web con HTML5/CSS3 moderno y administración eficiente de bases de datos relacionales (SQL).
+                    </p>
+                    <ul style="color: #4A5568; font-size: 0.9rem; line-height: 1.6; margin: 0; padding-left: 20px;">
+                        <li>Aplicación rigurosa de principios de normalización de datos.</li>
+                        <li>Desarrollo de módulos lógicos escalables y reutilizables.</li>
+                        <li>Trabajo bajo metodologías ágiles de desarrollo de software.</li>
+                    </ul>
+                </div>
+
+                <div class="card-hover" style="background: #FFFFFF; border: 1px solid #E2E8F0; border-radius: 12px; width: 500px; padding: 30px; box-shadow: 0 4px 10px rgba(0,0,0,0.05); border-left: 5px solid #D4AF37;">
+                    <span style="color: #0A192F; font-weight: bold; font-size: 0.9rem;">Práctica y Proyectos Independientes</span>
+                    <h3 style="color: #0A192F; margin: 8px 0 10px 0; font-size: 1.3rem;">Desarrollador de Soluciones Tecnológicas</h3>
+                    <p style="color: #4A5568; font-size: 0.95rem; line-height: 1.7; margin-bottom: 15px;">
+                        Creación autónoma de aplicaciones lógicas, modelados de sistemas de gestión y despliegue de interfaces web interactivas conectadas a plataformas cloud modernas como Netlify.
+                    </p>
+                    <ul style="color: #4A5568; font-size: 0.9rem; line-height: 1.6; margin: 0; padding-left: 20px;">
+                        <li>Implementación de sistemas transaccionales orientados a inventarios.</li>
+                        <li>Creación de herramientas multimedia y videojuegos lógicos en Python.</li>
+                        <li>Optimización continua de rendimiento y control de versiones con Git.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- 4. SECCIÓN HABILIDADES TÉCNICAS -->
+        <section id="habilidades" class="seccion-contenido card-hover" style="background: #FFFFFF; border: 1px solid #E2E8F0; border-radius: 12px; padding: 40px 20px; box-shadow: 0 10px 25px rgba(10,25,47,0.05);">
+            <h2 style="color: #0A192F; text-align: center; margin-bottom: 10px; font-size: 2.2rem;">Habilidades Técnicas</h2>
+            <p style="color: #718096; text-align: center; margin-bottom: 30px; font-size: 1rem;">Dominio de lenguajes, frameworks y herramientas profesionales</p>
+
+            <div style="display: flex; gap: 20px; justify-content: center; flex-wrap: wrap;">
+                <div class="card-hover" style="background: #F8F9FA; border: 1px solid #CBD5E0; border-radius: 8px; width: 240px; padding: 25px; text-align: center; border-top: 4px solid #0A192F;">
+                    <i class="fa-brands fa-python" style="font-size: 2.2rem; color: #0A192F; margin-bottom: 12px;"></i>
+                    <h3 style="color: #0A192F; margin-top: 0; font-size: 1.2rem;">Python</h3>
+                    <p style="color: #4A5568; font-size: 0.9rem; line-height: 1.5; margin-bottom: 0;">Automatización de procesos, estructuras de datos avanzadas, excepciones y Pygame.</p>
+                </div>
+                <div class="card-hover" style="background: #F8F9FA; border: 1px solid #CBD5E0; border-radius: 8px; width: 240px; padding: 25px; text-align: center; border-top: 4px solid #D4AF37;">
+                    <i class="fa-solid fa-code" style="font-size: 2.2rem; color: #D4AF37; margin-bottom: 12px;"></i>
+                    <h3 style="color: #0A192F; margin-top: 0; font-size: 1.2rem;">Desarrollo Web</h3>
+                    <p style="color: #4A5568; font-size: 0.9rem; line-height: 1.5; margin-bottom: 0;">HTML5 semántico, CSS3 modular avanzado y JavaScript interactivo dinámico.</p>
+                </div>
+                <div class="card-hover" style="background: #F8F9FA; border: 1px solid #CBD5E0; border-radius: 8px; width: 240px; padding: 25px; text-align: center; border-top: 4px solid #0A192F;">
+                    <i class="fa-solid fa-database" style="font-size: 2.2rem; color: #0A192F; margin-bottom: 12px;"></i>
+                    <h3 style="color: #0A192F; margin-top: 0; font-size: 1.2rem;">Bases de Datos</h3>
+                    <p style="color: #4A5568; font-size: 0.9rem; line-height: 1.5; margin-bottom: 0;">Modelado relacional entidad-relación, esquemas de tablas y consultas SQL complejas.</p>
+                </div>
+                <div class="card-hover" style="background: #F8F9FA; border: 1px solid #CBD5E0; border-radius: 8px; width: 240px; padding: 25px; text-align: center; border-top: 4px solid #D4AF37;">
+                    <i class="fa-solid fa-laptop-code" style="font-size: 2.2rem; color: #D4AF37; margin-bottom: 12px;"></i>
+                    <h3 style="color: #0A192F; margin-top: 0; font-size: 1.2rem;">Herramientas</h3>
+                    <p style="color: #4A5568; font-size: 0.9rem; line-height: 1.5; margin-bottom: 0;">VS Code, control de versiones Git, GitHub y despliegue en Netlify.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 5. SECCIÓN PROYECTOS DESTACADOS -->
+        <section id="proyectos" class="seccion-contenido" style="padding: 10px 0;">
+            <h2 style="color: #0A192F; text-align: center; margin-bottom: 10px; font-size: 2.2rem;">Proyectos Destacados</h2>
+            <p style="color: #718096; text-align: center; margin-bottom: 30px; font-size: 1rem;">Soluciones funcionales, código estructurado y multimedia de soporte técnico</p>
+
+            <div style="display: flex; gap: 20px; justify-content: center; flex-wrap: wrap; margin-bottom: 30px;">
+                <div class="card-hover" style="background: #FFFFFF; border: 1px solid #E2E8F0; border-radius: 8px; width: 320px; padding: 25px; box-shadow: 0 4px 10px rgba(0,0,0,0.05); border-top: 4px solid #0A192F;">
+                    <h3 style="color: #0A192F; margin-top: 0;">Sistema de Gestión de Datos</h3>
+                    <p style="color: #4A5568; font-size: 0.95rem; line-height: 1.6;">Desarrollo integral de lógica transaccional y diseño estructural relacional enfocado en garantizar la absoluta integridad y rapidez en la recuperación de información institucional.</p>
+                </div>
+                <div class="card-hover" style="background: #FFFFFF; border: 1px solid #E2E8F0; border-radius: 8px; width: 320px; padding: 25px; box-shadow: 0 4px 10px rgba(0,0,0,0.05); border-top: 4px solid #D4AF37;">
+                    <h3 style="color: #0A192F; margin-top: 0;">Videojuego Arcade en Python</h3>
+                    <p style="color: #4A5568; font-size: 0.95rem; line-height: 1.6;">Construcción de aplicación interactiva basada en eventos en tiempo real, gestión de colisiones y bucles de renderizado utilizando la librería especializada Pygame.</p>
+                </div>
+                <a href="https://docs.python.org/3/" target="_blank" style="text-decoration: none; color: inherit; display: block;">
+                    <div class="card-hover" style="background: #FFFFFF; border: 1px solid #E2E8F0; border-radius: 8px; width: 320px; padding: 25px; box-shadow: 0 4px 10px rgba(0,0,0,0.05); border-top: 4px solid #0A192F; height: 100%; box-sizing: border-box;">
+                        <h3 style="color: #0A192F; margin-top: 0;">Documentación Python 🔗</h3>
+                        <p style="color: #4A5568; font-size: 0.95rem; line-height: 1.6;">Explora la guía oficial y recursos avanzados de programación que sirven como referencia directa para la construcción de mis arquitecturas backend. (Haz clic)</p>
+                    </div>
+                </a>
+            </div>
+
+            <div style="background: #FFFFFF; border: 1px solid #E2E8F0; border-radius: 12px; padding: 30px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); display: flex; gap: 30px; flex-wrap: wrap; align-items: center; justify-content: center;">
+                <div style="flex: 1; min-width: 300px; text-align: center;">
+                    <h3 style="color: #0A192F; margin-top: 0;">Demostración Visual</h3>
+                    <p style="color: #4A5568; font-size: 0.95rem;">Captura institucional y de pruebas operativas en entornos de desarrollo locales.</p>
+                    <img src="./perfil_profecional/De_frente.jpg" alt="Demostración de proyecto" style="width: 100%; max-width: 300px; border-radius: 8px; border: 2px solid #D4AF37; object-fit: cover;">
+                </div>
+                <div style="flex: 1; min-width: 300px; text-align: center;">
+                    <h3 style="color: #0A192F; margin-top: 0;">Video Explicativo</h3>
+                    <p style="color: #4A5568; font-size: 0.95rem;">Resumen audiovisual del funcionamiento de sistemas y lógica aplicada.</p>
+                    <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; border-radius: 8px; border: 2px solid #0A192F;">
+                        <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="Video de proyecto" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" allowfullscreen></iframe>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 6. SECCIÓN PRESENTACIÓN FOTOGRÁFICA (GALERÍA) -->
+        <section id="galeria" class="seccion-contenido card-hover" style="background: #FFFFFF; border: 1px solid #E2E8F0; border-radius: 12px; padding: 40px 20px; box-shadow: 0 10px 25px rgba(10,25,47,0.05);">
+            <h2 style="color: #0A192F; text-align: center; margin-bottom: 10px; font-size: 2.2rem;">Presentación Fotográfica</h2>
+            <p style="color: #718096; text-align: center; margin-bottom: 30px; font-size: 1rem;">Registro formal, institucional y profesional en múltiples ángulos de visualización</p>
+
+            <div style="display: flex; gap: 20px; justify-content: center; flex-wrap: wrap;">
+                <div class="card-hover" style="background: #F8F9FA; border: 1px solid #CBD5E0; border-radius: 8px; overflow: hidden; width: 230px; box-shadow: 0 4px 10px rgba(0,0,0,0.08);">
+                    <div style="height: 320px; overflow: hidden; background: #fff;">
+                        <img src="./perfil_profecional/De_frente.jpg" alt="Vista Frontal" style="width: 100%; height: 100%; object-fit: contain; object-position: center;">
+                    </div>
+                    <div style="padding: 12px; text-align: center; color: #0A192F; font-size: 0.9rem; font-weight: bold; background: #EDF2F7; border-top: 1px solid #CBD5E0;">Vista Frontal</div>
+                </div>
+                <div class="card-hover" style="background: #F8F9FA; border: 1px solid #CBD5E0; border-radius: 8px; overflow: hidden; width: 230px; box-shadow: 0 4px 10px rgba(0,0,0,0.08);">
+                    <div style="height: 320px; overflow: hidden; background: #fff;">
+                        <img src="./perfil_profecional/De_frente.jpg" alt="Cuerpo Entero" style="width: 100%; height: 100%; object-fit: contain; object-position: center;">
+                    </div>
+                    <div style="padding: 12px; text-align: center; color: #0A192F; font-size: 0.9rem; font-weight: bold; background: #EDF2F7; border-top: 1px solid #CBD5E0;">Plano Completo</div>
+                </div>
+                <div class="card-hover" style="background: #F8F9FA; border: 1px solid #CBD5E0; border-radius: 8px; overflow: hidden; width: 230px; box-shadow: 0 4px 10px rgba(0,0,0,0.08);">
+                    <div style="height: 320px; overflow: hidden; background: #fff;">
+                        <img src="./perfil_profecional/Perfil.jpg" alt="Vista de Perfil" style="width: 100%; height: 100%; object-fit: contain; object-position: center;">
+                    </div>
+                    <div style="padding: 12px; text-align: center; color: #0A192F; font-size: 0.9rem; font-weight: bold; background: #EDF2F7; border-top: 1px solid #CBD5E0;">Vista de Perfil</div>
+                </div>
+                <div class="card-hover" style="background: #F8F9FA; border: 1px solid #CBD5E0; border-radius: 8px; overflow: hidden; width: 230px; box-shadow: 0 4px 10px rgba(0,0,0,0.08);">
+                    <div style="height: 320px; overflow: hidden; background: #fff;">
+                        <img src="./perfil_profecional/Atras.jpg" alt="Vista Posterior" style="width: 100%; height: 100%; object-fit: contain; object-position: center;">
+                    </div>
+                    <div style="padding: 12px; text-align: center; color: #0A192F; font-size: 0.9rem; font-weight: bold; background: #EDF2F7; border-top: 1px solid #CBD5E0;">Vista Posterior</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 7. NUEVO APARTADO: METAS -->
+        <section id="metas" class="seccion-contenido card-hover" style="background: #FFFFFF; border: 1px solid #E2E8F0; border-radius: 12px; padding: 40px; box-shadow: 0 10px 25px rgba(10,25,47,0.05);">
+            <h2 style="color: #0A192F; text-align: center; margin-bottom: 10px; font-size: 2.2rem;">Metas Profesionales</h2>
+            <p style="color: #718096; text-align: center; margin-bottom: 30px; font-size: 1rem;">Proyección estratégica a corto, mediano y largo plazo en la industria tecnológica</p>
+            
+            <div style="display: flex; gap: 20px; justify-content: center; flex-wrap: wrap;">
+                <div style="background: #F8F9FA; border: 1px solid #CBD5E0; border-radius: 8px; width: 320px; padding: 25px; border-top: 4px solid #0A192F;">
+                    <h3 style="color: #0A192F; margin-top: 0;"><i class="fa-solid fa-bullseye" style="color: #D4AF37;"></i> Corto Plazo</h3>
+                    <p style="color: #4A5568; font-size: 0.95rem; line-height: 1.6;">Consolidar un dominio absoluto sobre estructuras de datos avanzadas, patrones de diseño de software y frameworks modernos de desarrollo tanto en frontend como en backend.</p>
+                </div>
+                <div style="background: #F8F9FA; border: 1px solid #CBD5E0; border-radius: 8px; width: 320px; padding: 25px; border-top: 4px solid #D4AF37;">
+                    <h3 style="color: #0A192F; margin-top: 0;"><i class="fa-solid fa-chart-line" style="color: #0A192F;"></i> Mediano Plazo</h3>
+                    <p style="color: #4A5568; font-size: 0.95rem; line-height: 1.6;">Integrarme de manera activa en equipos multidisciplinarios de desarrollo tecnológico, aportando soluciones eficientes en proyectos corporativos reales de gran impacto.</p>
+                </div>
+                <div style="background: #F8F9FA; border: 1px solid #CBD5E0; border-radius: 8px; width: 320px; padding: 25px; border-top: 4px solid #0A192F;">
+                    <h3 style="color: #0A192F; margin-top: 0;"><i class="fa-solid fa-globe" style="color: #D4AF37;"></i> Largo Plazo</h3>
+                    <p style="color: #4A5568; font-size: 0.95rem; line-height: 1.6;">Liderar iniciativas de innovación tecnológica y convertirme en arquitecto de software especializado en la transformación digital y escalabilidad de organizaciones.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 8. NUEVO APARTADO EXTRA: LOGROS / CERTIFICACIONES -->
+        <section id="logros" class="seccion-contenido card-hover" style="background: #FFFFFF; border: 1px solid #E2E8F0; border-radius: 12px; padding: 40px; box-shadow: 0 10px 25px rgba(10,25,47,0.05);">
+            <h2 style="color: #0A192F; text-align: center; margin-bottom: 10px; font-size: 2.2rem;">Logros y Certificaciones</h2>
+            <p style="color: #718096; text-align: center; margin-bottom: 30px; font-size: 1rem;">Constancia de aprendizaje riguroso, constancia y especialización técnica</p>
+
+            <div style="display: flex; gap: 20px; justify-content: center; flex-wrap: wrap;">
+                <div style="background: #F8F9FA; border: 1px solid #CBD5E0; border-radius: 8px; width: 480px; padding: 25px; border-left: 5px solid #D4AF37;">
+                    <h3 style="color: #0A192F; margin: 0 0 8px 0;"><i class="fa-solid fa-award" style="color: #D4AF37;"></i> Certificación en Lógica y Programación Python</h3>
+                    <p style="color: #4A5568; font-size: 0.95rem; line-height: 1.6; margin: 0;">Aprobación rigurosa de módulos orientados a la resolución de problemas algorítmicos complejos, control avanzado de excepciones, manipulación eficiente de ficheros y programación orientada a objetos.</p>
+                </div>
+                <div style="background: #F8F9FA; border: 1px solid #CBD5E0; border-radius: 8px; width: 480px; padding: 25px; border-left: 5px solid #0A192F;">
+                    <h3 style="color: #0A192F; margin: 0 0 8px 0;"><i class="fa-solid fa-medal" style="color: #0A192F;"></i> Especialista en Modelado Relacional de Datos</h3>
+                    <p style="color: #4A5568; font-size: 0.95rem; line-height: 1.6; margin: 0;">Diseño estructural avanzado de bases de datos relacionales, establecimiento correcto de cardinalidades y optimización exhaustiva de sentencias SQL para sistemas de gestión corporativos.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 9. SECCIÓN CONTACTO (WHATSAPP DIRECTO) -->
+        <section id="contacto" class="seccion-contenido card-hover" style="background: #FFFFFF; border: 1px solid #E2E8F0; border-radius: 12px; padding: 40px; max-width: 700px; margin: 0 auto; box-shadow: 0 10px 25px rgba(10,25,47,0.05);">
+            <h2 style="color: #0A192F; text-align: center; margin-bottom: 10px; font-size: 2.2rem;">Contacto Profesional</h2>
+            <p style="color: #718096; text-align: center; margin-bottom: 30px; font-size: 1rem;">¿Tienes alguna propuesta o consulta? Contáctame de inmediato a través de WhatsApp.</p>
+            
+            <form onsubmit="enviarWhatsApp(event)" style="display: flex; flex-direction: column; gap: 20px; width: 100%;">
+                <div style="display: flex; flex-direction: column; gap: 5px; width: 100%;">
+                    <label style="color: #0A192F; font-weight: 600; font-size: 0.9rem;">Nombre</label>
+                    <input type="text" id="input-nombre" placeholder="Tu nombre" required style="width: 100%; padding: 12px; border: 1px solid #CBD5E0; border-radius: 6px; font-size: 1rem; outline: none; box-sizing: border-box;">
+                </div>
+                <div style="display: flex; flex-direction: column; gap: 5px; width: 100%;">
+                    <label style="color: #0A192F; font-weight: 600; font-size: 0.9rem;">Correo electrónico</label>
+                    <input type="email" id="input-correo" placeholder="tu@correo.com" required style="width: 100%; padding: 12px; border: 1px solid #CBD5E0; border-radius: 6px; font-size: 1rem; outline: none; box-sizing: border-box;">
+                </div>
+                <div style="display: flex; flex-direction: column; gap: 5px; width: 100%;">
+                    <label style="color: #0A192F; font-weight: 600; font-size: 0.9rem;">Mensaje</label>
+                    <textarea id="input-mensaje" rows="4" placeholder="Escribe tu mensaje aquí..." required style="width: 100%; padding: 12px; border: 1px solid #CBD5E0; border-radius: 6px; font-size: 1rem; outline: none; resize: vertical; box-sizing: border-box;"></textarea>
+                </div>
+                <button type="submit" style="background: #0A192F; color: #D4AF37; padding: 14px; border: 2px solid #D4AF37; border-radius: 6px; font-weight: bold; font-size: 1rem; cursor: pointer; transition: background 0.3s; width: 100%;">
+                    <i class="fa-brands fa-whatsapp" style="font-size: 1.2rem; margin-right: 8px;"></i> Enviar Mensaje por WhatsApp
+                </button>
+            </form>
+        </section>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer style="text-align: center; padding: 25px; background: #0A192F; color: #D4AF37; font-size: 0.9rem; border-top: 3px solid #D4AF37; margin-top: auto;">
+        &copy; 2026 Portafolio Profesional. Diseñado con estilo y código limpio.
+    </footer>
+
+    <!-- SCRIPT DE NAVEGACIÓN Y WHATSAPP -->
+    <script>
+        function mostrarSeccion(idSeccion) {
+            // Ocultar todas las secciones
+            const secciones = document.querySelectorAll('.seccion-contenido');
+            secciones.forEach(sec => sec.classList.remove('activa'));
+
+            // Quitar clase activa de todos los links
+            const links = document.querySelectorAll('.nav-link');
+            links.forEach(l => l.classList.remove('activo'));
+
+            // Mostrar la sección seleccionada
+            document.getElementById(idSeccion).classList.add('activa');
+
+            // Marcar el enlace como activo
+            document.getElementById('link-' + idSeccion).classList.add('activo');
+
+            // Subir el scroll suavemente al inicio
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        function enviarWhatsApp(event) {
+            event.preventDefault();
+            
+            // Reemplaza con tu número de WhatsApp real (incluyendo el código de país 51 para Perú)
+            const numeroWhatsApp = "51999999999"; 
+
+            const nombre = document.getElementById('input-nombre').value;
+            const correo = document.getElementById('input-correo').value;
+            const mensaje = document.getElementById('input-mensaje').value;
+
+            const texto = `Hola, mi nombre es *${nombre}* (Correo: ${correo}). ${mensaje}`;
+            const url = `https://wa.me/${numeroWhatsApp}?text=${encodeURIComponent(texto)}`;
+
+            window.open(url, '_blank');
+        }
+    </script>
+
+</body>
+</html>
